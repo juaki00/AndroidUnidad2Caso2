@@ -1,4 +1,6 @@
-class Humano(edad:Int, var nombre:String): SerVivo(edad) {
+package ej1
+
+class Humano(edad: Int, var nombre: String) : SerVivo(edad) {
 
     override fun equals(other: Any?): Boolean {
         val otroSer: Humano = other as Humano
@@ -8,16 +10,13 @@ class Humano(edad:Int, var nombre:String): SerVivo(edad) {
 
     fun mayor(otro: Humano): Humano {
         val elMayor: Humano
-        if(this.edad > otro.edad){
+        if (this.edad > otro.edad) {
             elMayor = this
-        }
-        else if(this.edad < otro.edad){
+        } else if (this.edad < otro.edad) {
             elMayor = otro
-        }
-        else if(this.nombre.length > otro.nombre.length){
+        } else if (this.nombre.length > otro.nombre.length) {
             elMayor = this
-        }
-        else{
+        } else {
             elMayor = otro
         }
         return elMayor
