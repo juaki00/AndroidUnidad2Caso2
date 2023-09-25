@@ -1,3 +1,5 @@
+package ej1
+
 open class SerVivo(var edad: Int){
 
     override fun equals(other: Any?): Boolean {
@@ -11,7 +13,7 @@ open class SerVivo(var edad: Int){
         if(this.edad > otro.edad){
             elMayor = this
         }
-        else{
+        else {
             elMayor = otro
         }
         return elMayor
