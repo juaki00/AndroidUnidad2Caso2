@@ -1,13 +1,13 @@
-open class SerVivo(private val edad: Int){
+open class SerVivo(var edad: Int){
 
-    override fun equals(otro: Any?): Boolean {
-        val otroSer: SerVivo = otro as SerVivo
+    override fun equals(other: Any?): Boolean {
+        val otroSer: SerVivo = other as SerVivo
 
         return this.edad == otroSer.edad
     }
 
     fun mayor(otro: SerVivo): SerVivo {
-        var elMayor: SerVivo
+        val elMayor: SerVivo
         if(this.edad > otro.edad){
             elMayor = this
         }
