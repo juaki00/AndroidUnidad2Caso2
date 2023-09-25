@@ -12,4 +12,8 @@ class Persona(val nombre:String, val apellido:String, val telefono:String) {
         }
     }
 
+    override fun toString(): String {
+        return "$nombre $apellido con telefono: $telefono"
+    }
+
 }
