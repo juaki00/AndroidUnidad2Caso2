@@ -2,46 +2,46 @@ package ej2
 
 import ej1.Humano
 
-class Cuenta(var numeroCuenta:String, var saldo:Float, var propietario: Humano) {
-    constructor() : this("", 0f, Humano(0, ""))
+class Cuenta(var numeroCuenta:String, var saldo:Float, var propietario: Persona) {
+    constructor() : this("", 0f, Persona("", "","000000000"))
 
     init {
         if(saldo<0) throw IllegalArgumentException("Saldo negativo")
     }
 
-    fun getNumeroCuenta(): String {
+    fun numeroCuenta(): String {
         return numeroCuenta
     }
 
-    fun getSaldo(): Float {
+    fun saldo(): Float {
         return saldo
     }
 
-    fun getPropietario(): Humano {
+    fun propietario(): Persona {
         return propietario
     }
 
-    fun setNumeroCuenta(numeroCuenta:String) {
+    fun numeroCuenta(numeroCuenta:String) {
         this.numeroCuenta = numeroCuenta
     }
 
-    fun setSaldo(saldo:Float) {
+    fun saldo(saldo:Float) {
         this.saldo = saldo
     }
 
-    fun setPropietario(propietario:Humano) {
+    fun propietario(propietario:Persona) {
         this.propietario = propietario
     }
 
     fun transaccion(cantidad:Float, tipo: TipoTransaccion){
         if (tipo==TipoTransaccion.INGRESO){
             this.saldo+=cantidad
-            println("Ingreso realiado, nuevo saldo: $saldo")
+            println("Ingreso de $cantidad realizado, nuevo saldo: $saldo")
         }
         else{
             if(this.saldo>=cantidad){
                 this.saldo-=cantidad
-                println("Reintegro realiado, nuevo saldo: $saldo")
+                println("Reintegro de $cantidad realizado, nuevo saldo: $saldo")
             }
             else{
                 println("Reintegro no realizado, saldo insuficiente")
